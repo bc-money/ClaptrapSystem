@@ -1,0 +1,7 @@
+#!/bin/bash
+
+roscore
+roslaunch turtlebot3_bringup turtlebot3_robot.launch
+roslaunch turtlebot3_slam turtlebot3_slam.launch slam_methods:=gmapping
+roslaunch frontier_exploration global_map.launch
+roslaunch turtlebot3_navigation move_base.launch

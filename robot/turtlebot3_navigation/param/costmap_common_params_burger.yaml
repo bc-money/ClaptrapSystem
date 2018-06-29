@@ -1,0 +1,35 @@
+#obstacle_range: 3.0
+#raytrace_range: 3.5
+
+footprint: [[-0.105, -0.105], [-0.105, 0.105], [0.041, 0.105], [0.041, -0.105]]
+#robot_radius: 0.105
+
+#inflation_radius: 1.0
+#cost_scaling_factor: 3.0
+
+map_type: costmap
+#observation_sources: scan
+#scan: {sensor_frame: base_scan, data_type: LaserScan, topic: scan, marking: true, clearing: true}
+
+#observation_sources: sonar_f
+#sonar: {sensor_frame: base_sonar_f, data_type: Range, topic: sonar_f, marking: true, clearing: true}
+
+obstacle_layer:
+  observation_sources: laser_scan_sensor
+  obstacle_range: 3.0
+  raytrace_range: 3.5
+  laser_scan_sensor: {sensor_frame: base_scan, data_type: LaserScan, topic: scan, marking: true, clearing: true}
+
+sonar_layer:
+  frame: base_sonar_f
+  topics: ["/sonar_f"]
+
+inflation_layer:
+  inflation_radius: 0.4
+  cost_scaling_factor: 3.0
+
+  plugins:
+   - {name: obstacle_layer, type: 'costmap_2d::ObstacleLayer'}
+   - {name: sonar_layer,   type: "range_sensor_layer::RangeSensorLayer"}
+   - {name: inflation_layer, type: 'costmap_2d::InflationLayer'}
+

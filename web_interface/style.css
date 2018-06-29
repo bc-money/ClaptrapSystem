@@ -1,0 +1,49 @@
+#map {
+	width: 70%;
+	height: 600px;;
+	border: 1px solid black;	
+   margin: 1em auto;	
+}
+
+#map:active {
+	cursor: grabbing; /* Or all-scroll */
+}
+
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+	background-color: #99e3ff;
+}
+
+h1 {
+	margin: 1.5em 0; 
+ 	font-size: 2.5em;
+	font-family: Impact;;		
+}
+
+a:visited {
+	color: white;;
+	
+}
+
+body { 		
+	color: white;
+	text-align: center;
+   background-image: url("images/beyond-limits-background.png");		
+   background-repeat: no-repeat; 
+	background-attachment: fixed;
+	background-position: center bottom;
+}
+
+p {
+	font-size: 1.25em;
+	font-weight: bold;	
+}
+
+textarea {
+	resize: none;
+}
+
+.leaflet-bookmarks-control {
+	color: black;
+	text-align: left;
+}
